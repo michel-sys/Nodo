@@ -5,19 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sala de Chat</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="/img/Nodo.png" type="image/x-icon">
 </head>
 <body>
-  <div class="container">
-    <div class="card chat-container">
-      <h2 id="sala-titulo" class="titulo"></h2>
-      <div id="chat-box" class="chat-box"></div>
+<div class="card chat-container">
+  <button id="voltar" class="btn-voltar">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+      <path d="M13.427 3.021h-7.427v-3.021l-6 5.39 6 5.61v-3h7.427c3.071 0 5.561 2.356 5.561 5.427 0 3.071-2.489 5.573-5.561 5.573h-7.427v5h7.427c5.84 0 10.573-4.734 10.573-10.573s-4.733-10.406-10.573-10.406z"/>
+    </svg>
+  </button>
+  <h2 id="sala-titulo" class="titulo"></h2>
+  <div id="chat-box" class="chat-box"></div>
 
-      <div class="chat-input">
-        <input type="text" id="mensagem" placeholder="Digite sua mensagem...">
-        <button id="enviar" class="btn-entrar">Enviar</button>
-      </div>
-    </div>
-  </div>
+<div class="chat-input"> 
+  <input type="text" id="mensagem" placeholder="Digite sua mensagem..."> 
+  <button id="enviar">Enviar</button>
+</div>
+
+
+</div>
 
 <script type="module">
   // Importações do Firebase
@@ -74,6 +80,13 @@
     chatBox.appendChild(div);
     chatBox.scrollTop = chatBox.scrollHeight;
   });
+
+
+  document.getElementById("voltar").addEventListener("click", () => {
+  window.history.back();
+});
+
+
 </script>
 
 </body>

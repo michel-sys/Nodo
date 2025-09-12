@@ -170,3 +170,48 @@ input::placeholder {
 #enviar:hover {
   background: #00cc66;
 }
+
+.btn-voltar {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  fill: #000; /* se precisar mudar a cor do SVG, usa fill no path */
+  padding: 0;
+}
+
+.btn-voltar svg path {
+  fill: #00ff88 /* cor da seta */
+}
+
+.btn-voltar:hover svg path {
+  fill: #00cc66; /* muda a cor ao passar o mouse */
+}
+
+.card.chat-container {
+  position: relative; /* necessário para o botão absoluto */
+}
+
+
+
+/* Scrollbar do chat-box */
+#chat-box::-webkit-scrollbar {
+  width: 8px; /* largura da barra de rolagem */
+}
+
+#chat-box::-webkit-scrollbar-track {
+  background: transparent; /* sem fundo */
+}
+
+#chat-box::-webkit-scrollbar-thumb {
+  background-color: #00ff88; /* verde */
+  border-radius: 4px; /* cantos arredondados */
+}
+
+/* Para Firefox */
+#chat-box {
+  scrollbar-width: thin;
+  scrollbar-color: #00ff88 transparent;
+}
