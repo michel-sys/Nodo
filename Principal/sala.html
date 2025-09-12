@@ -5,16 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sala de Chat</title>
   <link rel="stylesheet" href="style.css">
-  <link rel="shortcut icon" href="/img/Nodo Icon.png" type="image/x-icon">
 </head>
 <body>
-  <div class="chat-container">
-    <h2 id="sala-titulo"></h2>
-    <div id="chat-box" class="chat-box"></div>
+  <div class="container">
+    <div class="card chat-container">
+      <h2 id="sala-titulo" class="titulo"></h2>
+      <div id="chat-box" class="chat-box"></div>
 
-    <div class="chat-input">
-      <input type="text" id="mensagem" placeholder="Digite sua mensagem...">
-      <button id="enviar">Enviar</button>
+      <div class="chat-input">
+        <input type="text" id="mensagem" placeholder="Digite sua mensagem...">
+        <button id="enviar" class="btn-entrar">Enviar</button>
+      </div>
     </div>
   </div>
 
@@ -75,6 +76,5 @@
   });
 </script>
 
-  </script>
 </body>
 </html>
