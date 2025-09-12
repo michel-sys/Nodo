@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nodo</title>
+  <link rel="stylesheet" href="./style.css">
+  <link rel="shortcut icon" href="/img/Nodo Icon.png" type="image/x-icon">
+</head>
+<body>
+  <div class="container">
+    <!-- Caixa principal -->
+    <div class="card">
+      <h1 class="titulo">Nodo</h1>
+      <p class="subtitulo">Conectando pessoas e salas</p>
+
+      <input class="sem-setas" type="number" id="sala" placeholder="Digite o número da sala...">
+
+      <button class="btn-entrar" id="entrar">Entrar</button>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("entrar").addEventListener("click", () => {
+      const sala = document.getElementById("sala").value.trim();
+      if(sala){
+        // Redireciona para sala.html com o número na URL
+        window.location.href = `sala.html?sala=${sala}`;
+      }
+    });
+  </script>
+</body>
+</html>
