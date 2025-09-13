@@ -17,10 +17,12 @@
   <h2 id="sala-titulo" class="titulo"></h2>
   <div id="chat-box" class="chat-box"></div>
 
-  <div class="chat-input"> 
-    <input type="text" id="mensagem" placeholder="Digite sua mensagem..."> 
-    <button id="enviar">Enviar</button>
-  </div>
+<div class="chat-input"> 
+  <input type="text" id="mensagem" placeholder="Digite sua mensagem..."> 
+  <button id="enviar">Enviar</button>
+</div>
+
+
 </div>
 
 <script type="module">
@@ -28,7 +30,7 @@
   import { initializeApp } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-app.js";
   import { getDatabase, ref, push, onChildAdded } from "https://www.gstatic.com/firebasejs/12.2.1/firebase-database.js";
 
-  // Config do seu projeto
+  // Config do seu projeto (corrigi o storageBucket)
   const firebaseConfig = {
     apiKey: "AIzaSyDbMYoQ0tgiM1SZVHngVqogckLXO-JrF7o",
     authDomain: "chat-nodo.firebaseapp.com",
@@ -57,11 +59,9 @@
   btnEnviar.addEventListener("click", () => {
     const texto = input.value.trim();
     if (texto) {
-      const agora = new Date();
       push(ref(db, "salas/" + sala), {
         texto: texto,
-        data: agora.toLocaleDateString("pt-BR"),
-        horario: agora.toLocaleTimeString("pt-BR", { hour: "2-digit", minute: "2-digit" })
+        horario: new Date().toLocaleTimeString()
       });
       input.value = "";
     }
@@ -76,14 +76,17 @@
     const msg = snapshot.val();
     const div = document.createElement("div");
     div.className = "mensagem";
-    div.innerText = msg.texto + "  (" + msg.data + " - " + msg.horario + ")";
+    div.innerText = msg.texto + "  (" + msg.horario + ")";
     chatBox.appendChild(div);
     chatBox.scrollTop = chatBox.scrollHeight;
   });
 
+
   document.getElementById("voltar").addEventListener("click", () => {
-    window.history.back();
-  });
+  window.history.back();
+});
+
+
 </script>
 
 </body>
